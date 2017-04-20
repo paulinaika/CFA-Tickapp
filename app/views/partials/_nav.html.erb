@@ -3,12 +3,12 @@
     <a href="#!" class="brand-logo">Logo</a>
     <a href="" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">List of Ticks</a></li>
+      <li><a href="sass.html">Taxonomy</a></li>
 
       <% if user_signed_in? %>
+      <li><a href=/pages/geomap>Geomap</a></li>
       <li><a href=/posts>Forum</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html"></a></li>
+      <li><a href=/pages/contact>Contact Us</a></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to 'Login', new_user_session_path  %></li>
@@ -16,10 +16,10 @@
 
     </ul>
     <ul class="side-nav" id="mobile-demo">
-      <li><a href=#>List of Ticks</a></li>
+      <li><a href=#>Taxonomy</a></li>
+      <li><a href=/pages/geomap>Geomap</a></li>
       <li><a href=/posts>Forum</a></li>
-      <li><a href="collapsible.html">Javascript</a></li>
-      <li><a href="mobile.html">Mobile</a></li>
+      <li><a href=/pages/contact>Contact Us</a></li>
     </ul>
   </div>
 </nav>
