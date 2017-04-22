@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ticks
   resources :locations
   resources :posts
   root 'pages#home'

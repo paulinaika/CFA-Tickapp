@@ -14,7 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require underscore
-//= require_tree .
+
+//= require cable
+//= require gmaps_google
+
+
 
 $( document ).ready(function(){
   $('.button-collapse').sideNav();

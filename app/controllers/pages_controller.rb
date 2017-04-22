@@ -3,6 +3,6 @@ class PagesController < ApplicationController
   end
 
   def geomap
-    @locations = Location.all
+    @ticks = Tick.all
   end
 end

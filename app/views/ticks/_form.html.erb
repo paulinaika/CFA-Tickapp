@@ -1,0 +1,112 @@
+<%= javascript_include_tag ('locationpicker.jquery.min.js') %>
+
+
+<%= form_for(tick) do |f| %>
+  <% if tick.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tick.errors.count, "error") %> prohibited this tick from being saved:</h2>
+
+      <ul>
+      <% tick.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :common_name %>
+    <%= f.text_field :common_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scientific_name %>
+    <%= f.text_field :scientific_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mpsp_genotype %>
+    <%= f.text_field :mpsp_genotype %>
+  </div>
+
+  <div class="field">
+    <%= f.label :host_species %>
+    <%= f.text_field :host_species %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vector %>
+    <%= f.text_field :vector %>
+  </div>
+
+  <div class="field">
+    <%= f.label :common_parasite %>
+    <%= f.text_field :common_parasite %>
+  </div>
+
+  <div class="field">
+    <%= f.label :diagnosis %>
+    <%= f.text_field :diagnosis %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longtitude %>
+    <%= f.text_field :longtitude %>
+  </div>
+
+
+
+
+
+  <div id="somecomponent" style="width: 500px; height: 400px;"></div>
+  <script>
+      $('#somecomponent').locationpicker(
+        {
+    location: {
+        latitude: 40.7324319,
+        longitude: -73.82480777777776
+      },
+      locationName: "",
+      radius: 500,
+      zoom: 1,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [],
+      mapOptions: {},
+      scrollwheel: true,
+      inputBinding: {
+          latitudeInput: $('#tick_latitude'),
+          longitudeInput: $('#tick_longtitude'),
+          radiusInput: null,
+          locationNameInput: null
+      },
+      enableAutocomplete: false,
+      enableAutocompleteBlur: false,
+      autocompleteOptions: null,
+      addressFormat: 'postal_code',
+      enableReverseGeocode: true,
+      draggable: true,
+      onchanged: function(currentLocation, radius, isMarkerDropped) {},
+      onlocationnotfound: function(locationName) {},
+      oninitialized: function (component) {},
+      // must be undefined to use the default gMaps marker
+      markerIcon: undefined,
+      markerDraggable: true,
+      markerVisible : true
+  }
+      );
+  </script>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

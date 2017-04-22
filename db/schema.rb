@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420055306) do
+ActiveRecord::Schema.define(version: 20170421053613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,21 @@ ActiveRecord::Schema.define(version: 20170420055306) do
     t.datetime "updated_at",  null: false
     t.string   "post_image"
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
+  end
+
+  create_table "ticks", force: :cascade do |t|
+    t.string   "common_name"
+    t.string   "scientific_name"
+    t.string   "mpsp_genotype"
+    t.string   "host_species"
+    t.string   "vector"
+    t.string   "common_parasite"
+    t.string   "diagnosis"
+    t.string   "description"
+    t.float    "latitude"
+    t.float    "longtitude"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|
